@@ -1,1 +1,48 @@
-{"symbols":{"Car":{"hasNamespace":false,"type":0,"moduleName":"car","relativePath":"dev/car"},"Game":{"hasNamespace":false,"type":0,"moduleName":"game","relativePath":"dev/game"},"GameObject":{"hasNamespace":false,"type":0,"moduleName":"gameObject","relativePath":"dev/gameObject"},"Rock":{"hasNamespace":false,"type":0,"moduleName":"rock","relativePath":"dev/rock"},"Tree":{"hasNamespace":false,"type":0,"moduleName":"tree","relativePath":"dev/tree"},"Wheel":{"hasNamespace":false,"type":0,"moduleName":"wheel","relativePath":"dev/wheel"}},"files":{"dev/car.ts":"2017-05-23T08:43:53.000Z","dev/game.ts":"2017-05-23T08:37:24.000Z","dev/gameObject.ts":"2017-05-23T08:43:40.000Z","dev/rock.ts":"2017-05-23T08:44:05.000Z","dev/tree.ts":"2017-05-23T08:32:41.000Z","dev/wheel.ts":"2017-05-11T09:54:13.000Z"}}
+{
+    "symbols": {
+        "Car": {
+            "hasNamespace": false,
+            "type": 0,
+            "moduleName": "car",
+            "relativePath": "dev/car"
+        },
+        "Game": {
+            "hasNamespace": false,
+            "type": 0,
+            "moduleName": "game",
+            "relativePath": "dev/game"
+        },
+        "GameObject": {
+            "hasNamespace": false,
+            "type": 0,
+            "moduleName": "gameObject",
+            "relativePath": "dev/gameObject"
+        },
+        "Rock": {
+            "hasNamespace": false,
+            "type": 0,
+            "moduleName": "rock",
+            "relativePath": "dev/rock"
+        },
+        "Tree": {
+            "hasNamespace": false,
+            "type": 0,
+            "moduleName": "tree",
+            "relativePath": "dev/tree"
+        },
+        "Wheel": {
+            "hasNamespace": false,
+            "type": 0,
+            "moduleName": "wheel",
+            "relativePath": "dev/wheel"
+        }
+    },
+    "files": {
+        "dev/car.ts": "2017-05-23T08:43:53.000Z",
+        "dev/game.ts": "2017-05-23T08:37:24.000Z",
+        "dev/gameObject.ts": "2017-05-23T08:43:40.000Z",
+        "dev/rock.ts": "2017-05-23T08:44:05.000Z",
+        "dev/tree.ts": "2017-05-23T08:32:41.000Z",
+        "dev/wheel.ts": "2017-05-11T09:54:13.000Z"
+    }
+}
