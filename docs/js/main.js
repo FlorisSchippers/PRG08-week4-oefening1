@@ -54,6 +54,7 @@ var GameObject = (function () {
         enumerable: true,
         configurable: true
     });
+    GameObject.prototype.move = function () { };
     return GameObject;
 }());
 var Car = (function (_super) {
@@ -123,10 +124,10 @@ var Game = (function () {
         this.score = 0;
         this.request = 0;
         this._gameOver = false;
-        this.gameOjects = new Array();
-        var tree = new Tree();
+        this.gameObjects = new Array();
         for (var i = 0; i < 6; i++) {
             this.addCarWithRock(i);
+            this.gameObjects.push(new Tree());
         }
         this.request = requestAnimationFrame(function () { return _this.gameLoop(); });
     }
@@ -136,12 +137,12 @@ var Game = (function () {
         return Game._instance;
     };
     Game.prototype.addCarWithRock = function (index) {
-        this.gameOjects.push(new Car(index));
-        this.gameOjects.push(new Rock(index));
+        this.gameObjects.push(new Car(index));
+        this.gameObjects.push(new Rock(index));
     };
     Game.prototype.gameLoop = function () {
         var _this = this;
-        for (var _i = 0, _a = this.gameOjects; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.gameObjects; _i < _a.length; _i++) {
             var gameObject = _a[_i];
             if (gameObject instanceof Car || gameObject instanceof Rock) {
                 gameObject.move();
@@ -152,9 +153,9 @@ var Game = (function () {
         this.request = requestAnimationFrame(function () { return _this.gameLoop(); });
     };
     Game.prototype.checkCollision = function () {
-        for (var _i = 0, _a = this.gameOjects; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.gameObjects; _i < _a.length; _i++) {
             var gameObject1 = _a[_i];
-            for (var _b = 0, _c = this.gameOjects; _b < _c.length; _b++) {
+            for (var _b = 0, _c = this.gameObjects; _b < _c.length; _b++) {
                 var gameObject2 = _c[_b];
                 if (gameObject1 instanceof Car && gameObject2 instanceof Rock) {
                     if (gameObject1.hasCollision(gameObject2)) {
@@ -226,6 +227,9 @@ var Tree = (function (_super) {
     __extends(Tree, _super);
     function Tree() {
         _super.call(this, 'tree', document.getElementById("container"));
+        this.x = Math.random() * 400 + 400;
+        this.y = Math.random() * 400;
+        this.div.style.transform = "translate(" + this.x + "px," + this.y + "px)";
     }
     return Tree;
 }(GameObject));

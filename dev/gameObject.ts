@@ -40,4 +40,6 @@ class GameObject {
         this.div = document.createElement(tag);
         parent.appendChild(this.div);
     }
+
+    move(){} //Alsjeblieft Willie
 }

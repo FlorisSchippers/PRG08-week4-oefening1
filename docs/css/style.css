@@ -52,6 +52,7 @@ cloud {
 tree {
     background-image: url(../images/tree.png);
     width: 50px; height: 93px;
+    z-index: 1;
 }
 
 

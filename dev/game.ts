@@ -3,7 +3,7 @@
 class Game {
 
     private static _instance: Game;
-    private gameOjects: Array<GameObject>;
+    private gameObjects: Array<GameObject>;
     private score: number = 0;
     private request: number = 0;
     private _gameOver: boolean = false;
@@ -14,21 +14,21 @@ class Game {
     }
 
     private constructor() {
-        this.gameOjects = new Array<GameObject>();
-        let tree = new Tree();
+        this.gameObjects = new Array<GameObject>();
         for (let i = 0; i < 6; i++) {
             this.addCarWithRock(i);
+            this.gameObjects.push(new Tree());
         }
         this.request = requestAnimationFrame(() => this.gameLoop());
     }
 
     private addCarWithRock(index: number) {
-        this.gameOjects.push(new Car(index));
-        this.gameOjects.push(new Rock(index));
+        this.gameObjects.push(new Car(index));
+        this.gameObjects.push(new Rock(index));
     }
 
     private gameLoop() {
-        for (let gameObject of this.gameOjects) {
+        for (let gameObject of this.gameObjects) {
             if (gameObject instanceof Car || gameObject instanceof Rock) {
                 gameObject.move();
             }
@@ -39,8 +39,8 @@ class Game {
     }
 
     private checkCollision() {
-        for (let gameObject1 of this.gameOjects) {
-            for (let gameObject2 of this.gameOjects) {
+        for (let gameObject1 of this.gameObjects) {
+            for (let gameObject2 of this.gameObjects) {
                 if (gameObject1 instanceof Car && gameObject2 instanceof Rock) {
                     if (gameObject1.hasCollision(gameObject2)) {
                         gameObject2.crashed(gameObject1.speed);
